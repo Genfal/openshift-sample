@@ -1,7 +1,6 @@
 FROM openjdk:11
-WORKDIR /app
-COPY mvnw .
+COPY . .
 RUN mvnw package
-COPY /target/*.jar .
 EXPOSE 8080
+WORKDIR /target
 ENTRYPOINT ["java", "-jar", "sample-0.0.1-SNAPSHOT.jar"]
