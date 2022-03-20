@@ -1,4 +1,5 @@
 FROM openjdk:11
+RUN mvnw package
 WORKDIR /app
 COPY /target/*.jar .
 EXPOSE 8080
